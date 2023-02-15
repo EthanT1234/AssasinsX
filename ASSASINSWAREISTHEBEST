@@ -385,7 +385,7 @@ pcall(function()
     }
   }
 }
-   
+   rconsoleprint('Loaded!')
    if syn then
        local response = syn.request(
            {
