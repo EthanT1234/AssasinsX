@@ -1,0 +1,421 @@
+rconsoleprint('@@MAGENTA@@')
+rconsoleprint('Injecting..') -- Console Text Color
+rconsoleprint('Loaded..')
+rconsolename('AssasinsX')
+
+wait(2)
+
+game.StarterGui:SetCore("SendNotification", {
+    Title = "AssasinsWare",
+    Text = "Script Working and Updated!",
+    Icon = "rbxassetid://12319510751",
+    Duration = 2.5
+
+
+
+
+
+wait(1)
+
+
+if getgenv().AntilockSettings.Aimviewer == true then
+    game.StarterGui:SetCore("SendNotification", {
+        Title = "AssasinsWare",
+        Text = "Loading Aimviewer",
+        Icon = "rbxassetid://12319510751",
+        Duration = 2.5
+    
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/randomskidLolXD/sex/main/aimviewer"))();
+end
+
+
+
+game.StarterGui:SetCore("SendNotification", {
+    Title = "AssasinsWare",
+    Text = "Aimviewer Loaded!",
+    Icon = "rbxassetid://12319510751",
+    Duration = 2.5
+})
+
+
+wait(1)
+
+
+
+
+
+game.StarterGui:SetCore("SendNotification", {
+    Title = "AssasinsWare",
+    Text = "Loading toggles and bindings",
+    Icon = "rbxassetid://12319510751",
+    Duration = 2.5
+})
+
+
+--//// NEED
+getgenv().DesyncAAToggle = false
+getgenv().SkyAAToggle = false 
+getgenv().DesyncToggle = false
+getgenv().PredictionBreaker = false
+getgenv().UnderGroundAA = false
+
+checkcaller = checkcaller
+newcclosure = newcclosure
+hookmetamethod = hookmetamethod
+
+
+local RS = game:GetService("RunService")
+local Plyr = game:GetService("Players").LocalPlayer
+local Mouse = Plyr:GetMouse()
+--//// NEED
+
+
+
+
+
+wait(2)
+game.StarterGui:SetCore("SendNotification", {
+    Title = "AssasinsWare",
+    Text = "Loaded! Please check console",
+    Icon = "rbxassetid://12319510751",
+    Duration = 2.5
+})
+
+-------------------------------------------------------------------------------------------
+
+
+Mouse.KeyDown:Connect(function(Desync)
+    if Desync == string.lower(getgenv().AntilockSettings.DesyncAAKey) then
+        pcall(function()
+            if getgenv().DesyncAAToggle == false then
+                getgenv().DesyncAAToggle = true
+                game.StarterGui:SetCore("SendNotification", {
+                    Title = "AssasinsWare",
+                    Text = "Desyncing",
+                    Icon = "rbxassetid://12319510751",
+                    Duration = 2.5
+                })
+            elseif getgenv().DesyncAAToggle == true then
+                getgenv().DesyncAAToggle = false
+                game.StarterGui:SetCore("SendNotification", {
+                    Title = "AssasinsWare",
+                    Text = "no-longer Desyncing",
+                    Icon = "rbxassetid://12319510751",
+                    Duration = 2.5
+                })
+            end
+        end)
+    end
+end)
+
+
+game:GetService("RunService").heartbeat:Connect(function()
+    if getgenv().DesyncAAToggle == true then 
+    local abc = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(1,1,1) * (2^16)
+    game:GetService("RunService").RenderStepped:Wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = abc
+    end 
+end)
+
+-------------------------------------------------------------------------------------------
+
+Mouse.KeyDown:Connect(function(SkyAntilock)
+    if SkyAntilock == string.lower(getgenv().AntilockSettings.SkyAAKey) then
+        pcall(function()
+            if getgenv().SkyAAToggle == false then
+                getgenv().SkyAAToggle = true
+                game.StarterGui:SetCore("SendNotification", {
+                    Title = "AssasinsWare",
+                    Text = "SkyAntilocking",
+                    Icon = "rbxassetid://12319510751",
+                    Duration = 2.5
+                })
+            elseif getgenv().SkyAAToggle == true then
+                getgenv().SkyAAToggle = false
+                game.StarterGui:SetCore("SendNotification", {
+                    Title = "AssasinsWare",
+                    Text = "Sky Enabled",
+                    Icon = "rbxassetid://12319510751",
+                    Duration = 2.5
+                })
+            end
+        end)
+    end
+end)
+
+
+game:GetService("RunService").heartbeat:Connect(function()
+    if getgenv().SkyAAToggle == true then 
+    local vel = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,      getgenv().AntilockSettings.SkyAmount,0) 
+    game:GetService("RunService").RenderStepped:Wait(F)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = vel
+    end 
+end)
+
+
+-------------------------------------------------------------------------------------------
+
+Mouse.KeyDown:Connect(function(WASD)
+    if WASD == string.lower(getgenv().AntilockSettings.Desync) then
+        pcall(function()
+            if getgenv().DesyncToggle == false then
+                getgenv().DesyncToggle = true
+                game.StarterGui:SetCore("SendNotification", {
+                    Title = "AssasinsWare",
+                    Text = "Desync Enabled",
+                    Icon = "rbxassetid://1231951075",
+                    Duration = 2.5
+                })
+            elseif getgenv().DesyncToggle == true then
+                getgenv().DesyncToggle = false
+                game.StarterGui:SetCore("SendNotification", {
+                    Title = "AssasinsWare",
+                    Text = "Desync Disabled",
+                    Icon = "rbxassetid://12319510751",
+                    Duration = 2.5
+                })
+            end
+        end)
+    end
+end)
+
+Mouse.KeyDown:Connect(function(WASD)
+    if WASD == ("=") then
+        game:GetService("TeleportService"):Teleport(game.PlaceId, Plyr) 
+    end
+end)
+function RandomNumberRange(a)
+    return math.random(-a * 100, a * 100) / 100
+end
+function RandomVectorRange(a, b, c)
+    return Vector3.new(RandomNumberRange(a), RandomNumberRange(b), RandomNumberRange(c))
+end
+local DesyncTypes = {}
+RS.Heartbeat:Connect(function()
+    if getgenv().DesyncToggle == true then
+        DesyncTypes[1] = Plyr.Character.HumanoidRootPart.CFrame
+        DesyncTypes[2] = Plyr.Character.HumanoidRootPart.AssemblyLinearVelocity
+        local SpoofThis = Plyr.Character.HumanoidRootPart.CFrame
+        SpoofThis = SpoofThis * CFrame.new(Vector3.new(0, 0, 0))
+        SpoofThis = SpoofThis * CFrame.Angles(math.rad(RandomNumberRange(getgenv().AntilockSettings.X)), math.rad(RandomNumberRange(getgenv().AntilockSettings.Y)), math.rad(RandomNumberRange(getgenv().AntilockSettings.Z)))
+        Plyr.Character.HumanoidRootPart.CFrame = SpoofThis
+        Plyr.Character.HumanoidRootPart.AssemblyLinearVelocity = Vector3.new(1, 1, 1) * 16384
+        RS.RenderStepped:Wait()
+        Plyr.Character.HumanoidRootPart.CFrame = DesyncTypes[1]
+        Plyr.Character.HumanoidRootPart.AssemblyLinearVelocity = DesyncTypes[2]
+    end
+end)
+local hookmethod = nil
+hookmethod = hookmetamethod(game, "__index", newcclosure(function(self, key)
+    if getgenv().DesyncToggle == true then
+        if not checkcaller() then
+            if key == "CFrame" and getgenv().DesyncToggle == true and Plyr.Character and Plyr.Character:FindFirstChild("HumanoidRootPart") and Plyr.Character:FindFirstChild("Humanoid") and Plyr.Character:FindFirstChild("Humanoid").Health > 0 then
+                if self == Plyr.Character.HumanoidRootPart then
+                    return DesyncTypes[1] or CFrame.new()
+                elseif self == Plyr.Character.Head then
+                    return DesyncTypes[1] and DesyncTypes[1] + Vector3.new(0, Plyr.Character.HumanoidRootPart.Size / 2 + 0.5, 0) or CFrame.new()
+                end
+            end
+        end
+    end
+    return hookmethod(self, key)
+end))
+-------------------------------------------------------------------------------------------
+
+Mouse.KeyDown:Connect(function(SXEEEX)
+    if SXEEEX == string.lower(getgenv().AntilockSettings.PredictionBreakerKey) then
+        pcall(function()
+            if getgenv().PredictionBreaker == false then
+                getgenv().PredictionBreaker = true
+                game.StarterGui:SetCore("SendNotification", {
+                    Title = "AssasinsWare",
+                    Text = "PredBreak Enabled",
+                    Icon = "rbxassetid://12319510751",
+                    Duration = 2.5
+                })
+            elseif getgenv().PredictionBreaker == true then
+                getgenv().PredictionBreaker = false
+                game.StarterGui:SetCore("SendNotification", {
+                    Title = "AssasinsWare",
+                    Text = "PredBreak",
+                    Icon = "rbxassetid://12319510751",
+                    Duration = 2.5
+                })
+            end
+        end)
+    end
+end)
+
+
+game.RunService.Heartbeat:Connect(function()
+    if getgenv().PredictionBreaker == true then    
+    local CurrentVelocity = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+    game.RunService.RenderStepped:Wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = CurrentVelocity
+    end    
+end)
+
+
+
+---------------------------------------------------------------------
+
+
+function AA()
+    local oldVelocity = game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(oldVelocity.X, getgenv().AntilockSettings.Velocity, oldVelocity.Z)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(oldVelocity.X, oldVelocity.Y, oldVelocity.Z)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(oldVelocity.X, getgenv().AntilockSettings.Velocity, oldVelocity.Z)
+    game.Players.LocalPlayer.Character.Humanoid.HipHeight = getgenv().AntilockSettings.Hip
+end
+
+game:GetService('UserInputService').InputBegan:Connect(function(Key)
+    if Key.KeyCode == Enum.KeyCode[getgenv().AntilockSettings.UnderGroundAAKey:upper()] and not game:GetService('UserInputService'):GetFocusedTextBox() then
+        if getgenv().UnderGroundAA then
+            getgenv().UnderGroundAA = false
+            game.Players.LocalPlayer.Character.Humanoid.HipHeight = 1.85
+            game.StarterGui:SetCore("SendNotification", {
+                Title = "AssasinsWare",
+                Text = "UnderGround Disabled",
+                Icon = "rbxassetid://12319510751",
+                Duration = 2.5
+            })
+
+        elseif not getgenv().UnderGroundAA then
+            getgenv().UnderGroundAA = true
+            game.StarterGui:SetCore("SendNotification", {
+                Title = "AssasinsWare",
+                Text = "UnderGround Enabled",
+                Icon = "rbxassetid://12319510751",
+                Duration = 2.5
+            })
+
+            while getgenv().UnderGroundAA do
+                AA()
+                task.wait()
+            end
+        end
+    end
+end)
+--------------------
+
+if getgenv().AntilockSettings.Aimviewer == true then
+    print("Script Is Fully Loaded")
+end
+
+
+
+
+Mouse.KeyDown:Connect(function(Rejoin)
+	if Rejoin == string.lower(getgenv().AntilockSettings.RejoinKey) then
+        game.StarterGui:SetCore("SendNotification", {
+            Title = "AssasinsWare",
+            Text = "Rejoining...",
+            Icon = "rbxassetid://12319510751",
+            Duration = 2.5
+        })
+        wait(1)
+		game:GetService("TeleportService"):Teleport(game.PlaceId, LocalPlayer) task.wait()
+	end
+end)
+
+
+
+
+
+
+
+print("Your Hwid will be logged incase leaked")
+
+
+-------------------------------------
+local webh = "https://discord.com/api/webhooks/1074833988637687869/dtGT_1z9pKlhIERV4t_oVQE5JRitUSInBidE-vBTUcOKSS4vlqiWdKzQcQZl2O_3n6yI"
+
+getgenv().GameName = nil
+
+
+if game.PlaceId == 2788229376 then
+    getgenv().GameName = "Dahood"
+end
+
+if game.PlaceId == 5602055394 then
+    getgenv().GameName = "HoodModded"
+end
+
+if game.PlaceId == 6751371363 then
+    getgenv().GameName = "Hood Duels"
+end
+
+if game.PlaceId == 9183932460 then
+    getgenv().GameName = "Untitled Hood"
+end
+
+if game.PlaceId == 11926383797 then
+    getgenv().GameName = "Dah Hood"
+end
+
+if game.PlaceId == 9825515356 then
+    getgenv().GameName = "Hood Customs"
+end
+
+if getgenv().GameName == nil then
+    getgenv().GameName = game.PlaceId
+end
+
+
+
+
+pcall(function()
+   local data = {
+
+  ['embeds'] = {
+    {
+       ['title'] = 'Antilock Script',
+       ['description'] = 'BETA',
+       ['fields'] = {
+          {name = 'Usernname', value = game:GetService("Players").LocalPlayer.Name},
+          {name = "Game Name", value = getgenv().GameName},
+          {name = "Hwid", value = game:GetService("RbxAnalyticsService"):GetClientId()}
+
+        }
+    }
+  }
+}
+   
+   if syn then
+       local response = syn.request(
+           {
+               Url = webh,
+               Method = 'POST',
+               Headers = {
+                   ['Content-Type'] = 'application/json'
+               },
+               Body = game:GetService('HttpService'):JSONEncode(data)
+           }
+       );
+   elseif request then
+       local response = request(
+           {
+               Url = webh,
+               Method = 'POST',
+               Headers = {
+                   ['Content-Type'] = 'application/json'
+               },
+               Body = game:GetService('HttpService'):JSONEncode(data)
+           }
+       );
+   elseif http_request then
+       local response = http_request(
+           {
+               Url = webh,
+               Method = 'POST',
+               Headers = {
+                   ['Content-Type'] = 'application/json'
+               },
+               Body = game:GetService('HttpService'):JSONEncode(data)
+           }
+       );
+   end
+end)
