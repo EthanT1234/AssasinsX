@@ -82,6 +82,10 @@ RunService:BindToRenderStep("AimLock", 0, function()
             end
         end
     end)
+     rconsoleprint('Injected And Loaded Do Not Close This')
+rconsolename('AssasinsWareV2')
+rconsoleprint('@@RED@@')
+    
     
     
         
