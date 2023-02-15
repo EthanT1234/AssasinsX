@@ -1,16 +1,15 @@
 rconsoleprint('@@MAGENTA@@')
-rconsoleprint('Injecting..') -- Console Text Color
-rconsoleprint('Loaded..')
-rconsolename('AssasinsX')
+rconsoleprint('Loading..')
+rconsolename('gg/assasinsX')
 
 wait(2)
 
 game.StarterGui:SetCore("SendNotification", {
-    Title = "AssasinsWare",
+    Title = "AssasinsX",
     Text = "Script Working and Updated!",
     Icon = "rbxassetid://12319510751",
     Duration = 2.5
-
+})
 
 
 
@@ -18,20 +17,22 @@ game.StarterGui:SetCore("SendNotification", {
 wait(1)
 
 
+
+
 if getgenv().AntilockSettings.Aimviewer == true then
     game.StarterGui:SetCore("SendNotification", {
-        Title = "AssasinsWare",
+        Title = "AssasinsX",
         Text = "Loading Aimviewer",
-        Icon = "rbxassetid://12319510751",
+        Icon = "rbxassetid://12099223498",
         Duration = 2.5
-    
+    })
     loadstring(game:HttpGet("https://raw.githubusercontent.com/randomskidLolXD/sex/main/aimviewer"))();
 end
 
 
 
 game.StarterGui:SetCore("SendNotification", {
-    Title = "AssasinsWare",
+    Title = "AssasinsX",
     Text = "Aimviewer Loaded!",
     Icon = "rbxassetid://12319510751",
     Duration = 2.5
@@ -45,7 +46,7 @@ wait(1)
 
 
 game.StarterGui:SetCore("SendNotification", {
-    Title = "AssasinsWare",
+    Title = "AssasinsX",
     Text = "Loading toggles and bindings",
     Icon = "rbxassetid://12319510751",
     Duration = 2.5
@@ -75,7 +76,7 @@ local Mouse = Plyr:GetMouse()
 
 wait(2)
 game.StarterGui:SetCore("SendNotification", {
-    Title = "AssasinsWare",
+    Title = "AssasinsX",
     Text = "Loaded! Please check console",
     Icon = "rbxassetid://12319510751",
     Duration = 2.5
@@ -90,7 +91,7 @@ Mouse.KeyDown:Connect(function(Desync)
             if getgenv().DesyncAAToggle == false then
                 getgenv().DesyncAAToggle = true
                 game.StarterGui:SetCore("SendNotification", {
-                    Title = "AssasinsWare",
+                    Title = "AssasinsX",
                     Text = "Desyncing",
                     Icon = "rbxassetid://12319510751",
                     Duration = 2.5
@@ -98,7 +99,7 @@ Mouse.KeyDown:Connect(function(Desync)
             elseif getgenv().DesyncAAToggle == true then
                 getgenv().DesyncAAToggle = false
                 game.StarterGui:SetCore("SendNotification", {
-                    Title = "AssasinsWare",
+                    Title = "AssasinsX",
                     Text = "no-longer Desyncing",
                     Icon = "rbxassetid://12319510751",
                     Duration = 2.5
@@ -126,7 +127,7 @@ Mouse.KeyDown:Connect(function(SkyAntilock)
             if getgenv().SkyAAToggle == false then
                 getgenv().SkyAAToggle = true
                 game.StarterGui:SetCore("SendNotification", {
-                    Title = "AssasinsWare",
+                    Title = "AssasinsX",
                     Text = "SkyAntilocking",
                     Icon = "rbxassetid://12319510751",
                     Duration = 2.5
@@ -134,8 +135,8 @@ Mouse.KeyDown:Connect(function(SkyAntilock)
             elseif getgenv().SkyAAToggle == true then
                 getgenv().SkyAAToggle = false
                 game.StarterGui:SetCore("SendNotification", {
-                    Title = "AssasinsWare",
-                    Text = "Sky Enabled",
+                    Title = "AssasinsX",
+                    Text = "no-longer SkyAntilocking",
                     Icon = "rbxassetid://12319510751",
                     Duration = 2.5
                 })
@@ -163,16 +164,16 @@ Mouse.KeyDown:Connect(function(WASD)
             if getgenv().DesyncToggle == false then
                 getgenv().DesyncToggle = true
                 game.StarterGui:SetCore("SendNotification", {
-                    Title = "AssasinsWare",
-                    Text = "Desync Enabled",
-                    Icon = "rbxassetid://1231951075",
+                    Title = "AssasinsX",
+                    Text = "Desyncing",
+                    Icon = "rbxassetid://12319510751",
                     Duration = 2.5
                 })
             elseif getgenv().DesyncToggle == true then
                 getgenv().DesyncToggle = false
                 game.StarterGui:SetCore("SendNotification", {
-                    Title = "AssasinsWare",
-                    Text = "Desync Disabled",
+                    Title = "AssasinsX",
+                    Text = "No-longer Desyncing",
                     Icon = "rbxassetid://12319510751",
                     Duration = 2.5
                 })
@@ -230,16 +231,16 @@ Mouse.KeyDown:Connect(function(SXEEEX)
             if getgenv().PredictionBreaker == false then
                 getgenv().PredictionBreaker = true
                 game.StarterGui:SetCore("SendNotification", {
-                    Title = "AssasinsWare",
-                    Text = "PredBreak Enabled",
+                    Title = "AssasinsX",
+                    Text = "BreakingPrediction",
                     Icon = "rbxassetid://12319510751",
                     Duration = 2.5
                 })
             elseif getgenv().PredictionBreaker == true then
                 getgenv().PredictionBreaker = false
                 game.StarterGui:SetCore("SendNotification", {
-                    Title = "AssasinsWare",
-                    Text = "PredBreak",
+                    Title = "AssasinsX",
+                    Text = "No-longer BreakingPrediction",
                     Icon = "rbxassetid://12319510751",
                     Duration = 2.5
                 })
@@ -277,8 +278,8 @@ game:GetService('UserInputService').InputBegan:Connect(function(Key)
             getgenv().UnderGroundAA = false
             game.Players.LocalPlayer.Character.Humanoid.HipHeight = 1.85
             game.StarterGui:SetCore("SendNotification", {
-                Title = "AssasinsWare",
-                Text = "UnderGround Disabled",
+                Title = "AssasinsX",
+                Text = "No-longer UnderGroundAAing",
                 Icon = "rbxassetid://12319510751",
                 Duration = 2.5
             })
@@ -286,8 +287,8 @@ game:GetService('UserInputService').InputBegan:Connect(function(Key)
         elseif not getgenv().UnderGroundAA then
             getgenv().UnderGroundAA = true
             game.StarterGui:SetCore("SendNotification", {
-                Title = "AssasinsWare",
-                Text = "UnderGround Enabled",
+                Title = "AssasinsX",
+                Text = "UnderGroundAAing",
                 Icon = "rbxassetid://12319510751",
                 Duration = 2.5
             })
@@ -302,7 +303,7 @@ end)
 --------------------
 
 if getgenv().AntilockSettings.Aimviewer == true then
-    print("Script Is Fully Loaded")
+    print("^^^^ thats aimviewer shit dontworry about it^^^^^")
 end
 
 
@@ -311,8 +312,8 @@ end
 Mouse.KeyDown:Connect(function(Rejoin)
 	if Rejoin == string.lower(getgenv().AntilockSettings.RejoinKey) then
         game.StarterGui:SetCore("SendNotification", {
-            Title = "AssasinsWare",
-            Text = "Rejoining...",
+            Title = "AssasinsX",
+            Text = "Rejoining..",
             Icon = "rbxassetid://12319510751",
             Duration = 2.5
         })
@@ -327,7 +328,8 @@ end)
 
 
 
-print("Your Hwid will be logged incase leaked")
+print("Only info I log is your Username And the game you injected on.")
+
 
 
 -------------------------------------
@@ -419,3 +421,5 @@ pcall(function()
        );
    end
 end)
+
+
