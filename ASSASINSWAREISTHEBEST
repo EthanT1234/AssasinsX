@@ -1,19 +1,5 @@
 rconsoleprint('@@MAGENTA@@')
-rconsoleprint('      .::.
-                  .:'  .:
-        ,MMM8&&&.:'   .:'
-       MMMMM88&&&&  .:'
-      MMMMM88&&&&&&:'
-      MMMMM88&&&&&&
-    .:MMMMM88&&&&&&
-  .:'  MMMMM88&&&&
-.:'   .:'MMM8&&&'
-:'  .:'
-'::'  
-
-
-
-Loading..')
+rconsoleprint('Loading..')
 rconsolename('gg/assasinsX')
 
 wait(2)
