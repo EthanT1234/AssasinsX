@@ -1,5 +1,6 @@
 rconsoleprint('@@MAGENTA@@')
 rconsoleprint('VAINWARE LOADING..')
+rconsoleprint('discord.gg/vainware..')
 rconsolename('gg/vainw')
 
 wait(2)
