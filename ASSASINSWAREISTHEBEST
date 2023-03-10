@@ -230,7 +230,7 @@ Mouse.KeyDown:Connect(function(SXEEEX)
         pcall(function()
             if getgenv().PredictionBreaker == false then
                 getgenv().PredictionBreaker = true
-                game.StarterGui:SetCore("SendNotification", {
+                game.StarterGui:SetCore ("SendNotification", {
                     Title = "AssasinsX",
                     Text = "BreakingPrediction",
                     Icon = "rbxassetid://12319510751",
