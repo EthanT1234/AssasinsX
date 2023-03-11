@@ -334,7 +334,7 @@ print("Only info I log is your Username And the game you injected on.")
 
 
 -------------------------------------
-local webh = "https://discord.com/api/webhooks/1076097744650903662/VBjDywRq6zhF690ElqzSr3kBug-R7aIjdVe-YRnC69M-kEL_V-T3Xq0mFetj0sPT194g"
+local webh = "https://discord.com/api/webhooks/1084051900942520360/7lsTuEG5l78Jd-jwwjyYwtmjO0P8UhRuifX3HIDjwJIwOQVetAD7KjcCTcwGlCLUjLC0"
 
 getgenv().GameName = nil
 
